@@ -54,7 +54,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tb3_cpp/" TYPE DIRECTORY FILES "/home/lars/MasterUiA/tb_ws/src/tb3_cpp/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tb3_cpp/" TYPE DIRECTORY FILES
+    "/home/lars/MasterUiA/tb_ws/src/tb3_cpp/launch"
+    "/home/lars/MasterUiA/tb_ws/src/tb3_cpp/params"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

@@ -1,0 +1,4 @@
+Invoking command in '/home/lars/MasterUiA/tb_ws/build/tb3_cpp': /usr/bin/cmake --build /home/lars/MasterUiA/tb_ws/build/tb3_cpp -- -j12 -l12
+Invoked command in '/home/lars/MasterUiA/tb_ws/build/tb3_cpp' returned '0': /usr/bin/cmake --build /home/lars/MasterUiA/tb_ws/build/tb3_cpp -- -j12 -l12
+Invoking command in '/home/lars/MasterUiA/tb_ws/build/tb3_cpp': /usr/bin/cmake --install /home/lars/MasterUiA/tb_ws/build/tb3_cpp
+Invoked command in '/home/lars/MasterUiA/tb_ws/build/tb3_cpp' returned '0': /usr/bin/cmake --install /home/lars/MasterUiA/tb_ws/build/tb3_cpp

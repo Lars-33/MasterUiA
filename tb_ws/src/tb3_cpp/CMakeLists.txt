@@ -31,6 +31,7 @@ install(TARGETS my_node
 
 install(DIRECTORY
   launch
+  params
   DESTINATION share/${PROJECT_NAME}/
 )
 
