@@ -1,0 +1,20 @@
+[100%] Built target my_node
+-- Install configuration: ""
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/lib/tb_cpp/my_node
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp//launch
+-- Installing: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp//launch/tb_launch.py
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/ament_index/resource_index/package_run_dependencies/tb_cpp
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/ament_index/resource_index/parent_prefix_path/tb_cpp
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/environment/ament_prefix_path.sh
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/environment/path.sh
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/environment/path.dsv
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/local_setup.bash
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/local_setup.sh
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/local_setup.zsh
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/local_setup.dsv
+-- Installing: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/package.dsv
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/ament_index/resource_index/packages/tb_cpp
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/cmake/tb_cppConfig.cmake
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/cmake/tb_cppConfig-version.cmake
+-- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/package.xml

@@ -1,0 +1,24 @@
+[0.010s] Invoking command in '/home/lars/tb_ws/build/tb_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/lars/tb_ws/build/tb_cpp -- -j12 -l12
+[0.042s] [100%] Built target my_node
+[0.050s] Invoked command in '/home/lars/tb_ws/build/tb_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/lars/tb_ws/build/tb_cpp -- -j12 -l12
+[0.087s] Invoking command in '/home/lars/tb_ws/build/tb_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/lars/tb_ws/build/tb_cpp
+[0.092s] -- Install configuration: ""
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/lib/tb_cpp/my_node
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp//launch
+[0.093s] -- Installing: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp//launch/tb_launch.py
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/ament_index/resource_index/package_run_dependencies/tb_cpp
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/ament_index/resource_index/parent_prefix_path/tb_cpp
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/environment/ament_prefix_path.sh
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/environment/ament_prefix_path.dsv
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/environment/path.sh
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/environment/path.dsv
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/local_setup.bash
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/local_setup.sh
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/local_setup.zsh
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/local_setup.dsv
+[0.093s] -- Installing: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/package.dsv
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/ament_index/resource_index/packages/tb_cpp
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/cmake/tb_cppConfig.cmake
+[0.093s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/cmake/tb_cppConfig-version.cmake
+[0.094s] -- Up-to-date: /home/lars/tb_ws/install/tb_cpp/share/tb_cpp/package.xml
+[0.095s] Invoked command in '/home/lars/tb_ws/build/tb_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/lars/tb_ws/build/tb_cpp

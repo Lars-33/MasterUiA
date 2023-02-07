@@ -1,0 +1,6 @@
+Invoking command in '/home/lars/tb_ws/build/tb_cpp': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/lars/tb_ws/src/tb_cpp -DCMAKE_INSTALL_PREFIX=/home/lars/tb_ws/install/tb_cpp
+Invoked command in '/home/lars/tb_ws/build/tb_cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/lars/tb_ws/src/tb_cpp -DCMAKE_INSTALL_PREFIX=/home/lars/tb_ws/install/tb_cpp
+Invoking command in '/home/lars/tb_ws/build/tb_cpp': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/lars/tb_ws/build/tb_cpp -- -j12 -l12
+Invoked command in '/home/lars/tb_ws/build/tb_cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/lars/tb_ws/build/tb_cpp -- -j12 -l12
+Invoking command in '/home/lars/tb_ws/build/tb_cpp': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/lars/tb_ws/build/tb_cpp
+Invoked command in '/home/lars/tb_ws/build/tb_cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/lars/tb_ws/build/tb_cpp
