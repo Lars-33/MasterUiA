@@ -1,4 +1,0 @@
-Invoking command in '/home/lars/tb_ws/build/tb_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/lars/tb_ws/build/tb_cpp -- -j12 -l12
-Invoked command in '/home/lars/tb_ws/build/tb_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/lars/tb_ws/build/tb_cpp -- -j12 -l12
-Invoking command in '/home/lars/tb_ws/build/tb_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/lars/tb_ws/build/tb_cpp
-Invoked command in '/home/lars/tb_ws/build/tb_cpp' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/lars/tb_ws/build/tb_cpp
