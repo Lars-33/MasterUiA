@@ -27,6 +27,7 @@ def generate_launch_description():
         #    actions=[
             
                 SetRemap(src='/odom',dst='tb/odom'),
+                SetRemap(src='/cmd_vel',dst='tb/cmd_vel'),
 
                 IncludeLaunchDescription(
                     
