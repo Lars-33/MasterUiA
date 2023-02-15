@@ -19,6 +19,7 @@ from launch_ros.actions import SetRemap
 os.environ["TURTLEBOT3_MODEL"] = "waffle"
 
 os.system('sudo chmod a+rw /dev/ttyACM0')
+os.system('sudo chmod 666 /dev/ttyUSB0')
 
 base_path = os.path.realpath(get_package_share_directory('tb3_cpp'))
 rviz_path=base_path+'/params/test.rviz'
@@ -27,8 +28,8 @@ def generate_launch_description():
 
     return LaunchDescription([
 
-        SetRemap(src='/odom',dst='tb/odom'),
-        SetRemap(src='/cmd_vel',dst='tb/cmd_vel'),
+        #SetRemap(src='/odom',dst='tb/odom'),
+        #SetRemap(src='/cmd_vel',dst='tb/cmd_vel'),
 
         IncludeLaunchDescription(
             
@@ -45,11 +46,11 @@ def generate_launch_description():
                     
                 }.items()
         ),
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            arguments=['-d',str(rviz_path)]
-        ),
+        #Node(
+        #    package='rviz2',
+        #    executable='rviz2',
+        #    arguments=['-d',str(rviz_path)]
+        #),
         Node(
             package='rqt_graph',
             executable='rqt_graph'
