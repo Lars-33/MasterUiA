@@ -45,16 +45,16 @@ def generate_launch_description():
                 'tb3_param_dir':'./src/tb3_cpp/params/tb3_param.yaml'
                     
                 }.items()
-        ),
+        )
         #Node(
         #    package='rviz2',
         #    executable='rviz2',
         #    arguments=['-d',str(rviz_path)]
         #),
-        Node(
-            package='rqt_graph',
-            executable='rqt_graph'
-        )
+        #Node(
+        #    package='rqt_graph',
+        #    executable='rqt_graph'
+        #)
 
     ])
 
