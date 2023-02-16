@@ -34,14 +34,14 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(
                 os.path.join(
                     get_package_share_directory('nav2_bringup'),
-                    'launch/localization_launch.py'
+                    'launch/bringup_launch.py'
                 )
             ),
                     
-            launch_arguments={
-                'map':'/home/lars/MasterUiA/tb_ws/map/Masterlabben.yaml'
-                    
-                }.items()
+            #launch_arguments={
+            #    'map':'/home/lars/MasterUiA/tb_ws/map/Masterlabben.yaml'
+            #        
+            #    }.items()
         )
 
         # ros2 launch nav2_bringup rviz_launch.py 
