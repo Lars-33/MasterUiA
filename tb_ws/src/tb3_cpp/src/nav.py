@@ -24,26 +24,50 @@ def create_pose_stamped( nav , position_x , position_y , orientation_z):
 
 class MinimalPublisher(Node):
     
-    def __init__(self,x_pos):
-        super().__init__('minimal_publisher2')
+    def __init__(self):
+        super().__init__('wwwwwww')
         self.publisher_ = self.create_publisher(String, 'topic', 10)
         timer_period = 0.5  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
-        self.x_pos = x_pos #BasicNavigator().getFeedback().current_pose.pose.position.x 
+        #self.feedback = BasicNavigator().getFeedback().current_pose.pose.position.x
+        #feedback = BasicNavigator().getFeedback()
+        #self.x_pos = feedback.current_pose.pose.position.x
+        #self.y_pos = y_pos
+        #self.z_eul = z_euler
 
     def timer_callback(self):
-        msg = String()
-        msg.data = 'Hello World: %d x_pos: %f' %(self.i , self.x_pos )
+        msg = BasicNavigator()
+        #msg.data = 'x: %f y: %f z: %f' %( self.x_pos , self.y_pos, self.z_eul)
+        #msg.data = 'Hello World: %d' % self.i
+        msg.get = BasicNavigator().getFeedback().current_pose.pose.position.x
+        msg.data = 'Hello World: %d' % self.i
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.data)
+        self.get_logger().info('Pub: "%s"' % msg.data)
         self.i += 1
+        
+
+class OdometryPublisher(Node):
+    def __init__(self):
+        super().__init__('odometry_publisher')
+        self.publisher_ = self.create_publisher(Odometry, 'odometry', 10)
+
+    def publish_odometry(self, x, y, z, quat_x, quat_y, quat_z, quat_w):
+        msg = Odometry()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.pose.pose.position.x = x
+        msg.pose.pose.position.y = y
+        msg.pose.pose.position.z = z
+        msg.pose.pose.orientation.x = quat_x
+        msg.pose.pose.orientation.y = quat_y
+        msg.pose.pose.orientation.z = quat_z
+        msg.pose.pose.orientation.w = quat_w
+        self.publisher_.publish(msg)
 
 def main(): 
     rclpy.init()
-    
     nav = BasicNavigator()
-    
+
     # --- Set initial pose 
     initial_pose = create_pose_stamped( nav , -1.997726 , -0.499904 , 0.091122)
     #nav.setInitialPose( initial_pose )
@@ -52,25 +76,21 @@ def main():
     nav.waitUntilNav2Active()
 
     # --- Send Nav2 goal 
-    goal_pose = create_pose_stamped(nav , 2.0 , 0.0 , 1.57)
+    goal_pose = create_pose_stamped(nav , 2.0 , 0.0 , 3.14)
     nav.goToPose(goal_pose)
 
-    while not nav.isTaskComplete():
-        feedback = nav.getFeedback()
-        print( feedback , "\n")
-        #print( feedback.navigation_time , "\n")
-        #print ( feedback.distance_to_goal , "\n")
-        print ( feedback.current_pose.pose.position , "\n")
-        x_pos = nav.getFeedback().current_pose.pose.position.x 
-        print ( x_pos, "\n")
-        publisher = MinimalPublisher(x_pos)      
-        rclpy.spin(publisher)
-            
+    #while not nav.isTaskComplete():
+    #    pose = nav.getFeedback().current_pose.pose
+    #    x_pos = pose.position.x
+    #    y_pos = pose.position.y
+    #    x_euler , y_euler , z_euler = tf_transformations.euler_from_quaternion( [pose.orientation.x , pose.orientation.y , pose.orientation.z , pose.orientation.w] )
+    #    print ('x_pos = ',x_pos,'y_pos = ', y_pos ,'z_euler = ', z_euler, "\n \n")
     
+    
+    publisher = OdometryPublisher()   
+    rclpy.spin(publisher)
+                
     #x_pos = feedback.current_pose.pose.position.x 
-
-    
-    
 
     print(nav.getResult())
     # --- Shutdown
