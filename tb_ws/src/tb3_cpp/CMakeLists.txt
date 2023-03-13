@@ -48,6 +48,7 @@ install(PROGRAMS
   src/publisher.py
   src/node.py
   src/nav.py
+  src/pose.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
