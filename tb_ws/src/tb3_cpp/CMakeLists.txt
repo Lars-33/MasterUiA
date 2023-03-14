@@ -48,8 +48,11 @@ install(PROGRAMS
   src/feedback.py
   src/publisher.py
   src/nav.py
+  src/pose_pub_v0.py
   src/pose_pub_v1.py
   src/pose_pub_v2.py
+  src/pose_sub_v0.py
+  src/pose_sub_v1.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
