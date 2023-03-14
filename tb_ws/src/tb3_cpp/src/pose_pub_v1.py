@@ -45,7 +45,6 @@ class odom(Node):
         msg.pose.orientation.y = self.y_q
         msg.pose.orientation.z = self.z_q
         msg.pose.orientation.w = self.w_q
-        print(self.x , self.y)
         self.publisher_.publish(msg)
 
 def main(): 

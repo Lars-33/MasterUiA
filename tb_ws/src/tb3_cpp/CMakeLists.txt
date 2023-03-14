@@ -46,9 +46,9 @@ ament_python_install_package(src)
 
 install(PROGRAMS 
   src/publisher.py
-  src/node.py
   src/nav.py
-  src/pose.py
+  src/pose_pub_v1.py
+  src/pose_pub_v2.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
