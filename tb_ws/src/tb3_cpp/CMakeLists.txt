@@ -45,6 +45,7 @@ install(DIRECTORY
 ament_python_install_package(src)
 
 install(PROGRAMS 
+  src/feedback.py
   src/publisher.py
   src/nav.py
   src/pose_pub_v1.py
