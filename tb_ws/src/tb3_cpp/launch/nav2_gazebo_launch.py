@@ -13,12 +13,7 @@ print('hei')
 def generate_launch_description():
 
    return LaunchDescription([
-
-        Node(
-            package='rqt_graph',
-            executable='rqt_graph'
-        ),
-
+      
         # ros2 launch nav2_bringup rviz_launch.py 
         IncludeLaunchDescription(
             
@@ -28,6 +23,10 @@ def generate_launch_description():
                     'launch/spawn_turtlebot3.launch.py'
                 )
             ),
+            launch_arguments={
+                'x_pose':'-2.0',
+                'y_pose':'0.5' 
+            }.items()
         )
 
    ])
