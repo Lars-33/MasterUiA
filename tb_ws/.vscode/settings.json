@@ -3,5 +3,9 @@
     "python.autoComplete.extraPaths": [
         "/home/lars/masteruia/tb_ws/install/tb3_cpp/lib/python3.8/site-packages",
         "/opt/ros/galactic/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/lars/masteruia/tb_ws/install/tb3_cpp/lib/python3.8/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
     ]
 }
