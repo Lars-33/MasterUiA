@@ -32,3 +32,14 @@ def generate_launch_description():
 
    ])
 
+        #Node(
+        #    package='rviz2',
+        #    executable='rviz2',
+        #    arguments=['-d',str(rviz_path)]
+        #),
+        #Node(
+        #    package='rqt_graph',
+        #    executable='rqt_graph'
+        #)
+        base_path = os.path.realpath(get_package_share_directory('tb3_cpp'))
+rviz_path=base_path+'/params/test.rviz'
