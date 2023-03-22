@@ -19,7 +19,7 @@ from launch_ros.actions import PushRosNamespace
 os.environ["TURTLEBOT3_MODEL"] = "waffle"
 
 os.system('sudo chmod a+rw /dev/ttyACM0')
-os.system('sudo chmod 666 /dev/ttyUSB0')
+os.system('sudo chmod 777 /dev/ttyUSB0')
 
 def generate_launch_description():
 
