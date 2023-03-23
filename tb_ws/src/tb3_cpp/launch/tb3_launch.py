@@ -33,10 +33,7 @@ def generate_launch_description():
         GroupAction(
             actions=[
                 PushRosNamespace('tb'),
-
                 IncludeLaunchDescription(
-                    
-
                     PythonLaunchDescriptionSource(
                         os.path.join(
                             get_package_share_directory('turtlebot3_bringup'),
@@ -49,10 +46,7 @@ def generate_launch_description():
                         #'__ns':'/tb'    
                         }.items()
                 ),
-
-
             ]
         )
-
     ])
 
