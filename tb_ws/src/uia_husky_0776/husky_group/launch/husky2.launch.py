@@ -43,7 +43,7 @@ def generate_launch_description():
 
     config_twist_mux = PathJoinSubstitution(
         [FindPackageShare("husky_group"),
-        "params",
+        "params",config_control
         "twist_mux.yaml"],
     )
     
