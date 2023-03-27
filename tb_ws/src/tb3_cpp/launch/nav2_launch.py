@@ -27,12 +27,7 @@ os.system('sudo chmod 666 /dev/ttyUSB0')
 
 def generate_launch_description():
 
-    return LaunchDescription([
-
-        #SetRemap(src='/odom',dst='tb/odom'),
-        #SetRemap(src='/cmd_vel',dst='tb/cmd_vel'),
-        #DeclareLaunchArgument("tb", default_value=TextSubstitution(text="tb")),
-    GroupAction(
+    tb_spawn= GroupAction(
         actions=[
             PushRosNamespace('tb'),
             IncludeLaunchDescription(
@@ -52,9 +47,8 @@ def generate_launch_description():
     ),
 
 
-    time.sleep(20)
         #  ros2 launch slam_toolbox online_async_launch.py 
-    GroupAction(
+    slam=GroupAction(
         actions=[
             PushRosNamespace('tb'),
             IncludeLaunchDescription(
@@ -72,10 +66,9 @@ def generate_launch_description():
         ]
     ),
 
-    time.sleep(20)
 
         # ros2 launch nav2_bringup localization_launch.py 
-    GroupAction(
+    nav2=GroupAction(
         actions=[
             PushRosNamespace('tb'),
             IncludeLaunchDescription( 
@@ -86,7 +79,7 @@ def generate_launch_description():
                     )
                 ),    
                 launch_arguments={
-                    'map':'map/Masterlabben.yaml'
+                    #'map':'map/Masterlabben.yaml'
                     'params_file':'src/tb3_cpp/params/nav2_param.yaml'
                         
                 }.items()
@@ -105,5 +98,9 @@ def generate_launch_description():
         #    ),
         #)
 
-   ])
+    ld = LaunchDescription()
+    ld.add_action(tb_spawn)
+    ld.add_action(slam)
+    ld.add_action(nav2)
+    return ld
 
