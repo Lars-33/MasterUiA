@@ -8,6 +8,13 @@ import pathlib
 import launch.actions
 from launch.actions import DeclareLaunchArgument
 
+ARGUMENTS = [
+
+    DeclareLaunchArgument('localization_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","localization.yaml"],),
+                          description='Path to Localization .yaml file. In order to add for example um7(set publish tf to true)'),
+
+]
+
 def generate_launch_description():
     return LaunchDescription([
         launch_ros.actions.Node(
@@ -17,4 +24,4 @@ def generate_launch_description():
             output='screen',
             parameters=[os.path.join(get_package_share_directory("husky_control"), 'config', 'localization.yaml')],
            ),
-])
+    ])

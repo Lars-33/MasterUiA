@@ -3,6 +3,17 @@ from launch.substitutions import PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
+
+ARGUMENTS = [
+
+    DeclareLaunchArgument('teleop_interactive_markers_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","teleop_interactive_markers.yaml"],),
+                          description='Path to teleop_interactive_markers .yaml file. In order to add for example um7(set publish tf to false)'),
+
+    DeclareLaunchArgument('twist_mux_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","twist_mux.yaml"],),
+                          description='Path to twist_mux .yaml file. In order to add for example um7(set publish tf to false)'),
+
+]
+
 def generate_launch_description():
 
     filepath_config_twist_mux = PathJoinSubstitution(

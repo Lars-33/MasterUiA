@@ -3,6 +3,13 @@ from launch.substitutions import EnvironmentVariable, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
+ARGUMENTS = [
+
+    DeclareLaunchArgument('teleop_logitech_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","teleop_logitech.yaml"],),
+                          description='Path to teleop_logitech .yaml file. In order to add for example um7(set publish tf to false)'),
+]
+
+
 def generate_launch_description():
     lc = LaunchContext()
     joy_type = EnvironmentVariable('CPR_JOY_TYPE', default_value='logitech')
