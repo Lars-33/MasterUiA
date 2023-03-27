@@ -17,6 +17,8 @@ from launch.actions import GroupAction
 from launch_ros.actions import PushRosNamespace
 from launch.substitutions import LaunchConfiguration
 from launch.substitutions import TextSubstitution
+import time
+
 
 os.environ["TURTLEBOT3_MODEL"] = "waffle"
 
@@ -50,7 +52,7 @@ def generate_launch_description():
         ),
 
 
-
+time.sleep(20)
         #  ros2 launch slam_toolbox online_async_launch.py 
         GroupAction(
             actions=[
@@ -70,6 +72,7 @@ def generate_launch_description():
             ]
         ),
 
+time.sleep(20)
 
         # ros2 launch nav2_bringup localization_launch.py 
         GroupAction(
