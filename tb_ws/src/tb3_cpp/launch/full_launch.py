@@ -25,10 +25,6 @@ os.environ["TURTLEBOT3_MODEL"] = "waffle"
 os.system('sudo chmod a+rw /dev/ttyACM0')
 os.system('sudo chmod 666 /dev/ttyUSB0')
 
-ARGUMENTS = [
-    DeclareLaunchArgument('serial_port', default_value="/dev/ttyUSB1",
-                          description='Serial port to connect to the husky.'),
-]
 
 def generate_launch_description():
 
@@ -103,7 +99,7 @@ def generate_launch_description():
         #    ),
         #)
 
-    ld = LaunchDescription(ARGUMENTS)
+    ld = LaunchDescription()
     ld.add_action(tb_spawn)
     ld.add_action(slam)
     ld.add_action(nav2)
