@@ -20,12 +20,6 @@ from launch.substitutions import TextSubstitution
 import time
 
 
-os.environ["TURTLEBOT3_MODEL"] = "waffle"
-
-os.system('sudo chmod a+rw /dev/ttyACM0')
-os.system('sudo chmod 666 /dev/ttyUSB0')
-
-
 
 def generate_launch_description():
 
@@ -43,7 +37,7 @@ def generate_launch_description():
                 ),    
                 launch_arguments={
                     #'map':'map/Masterlabben.yaml',
-                    'params_file':'src/tb3_cpp/params/nav2_param.yaml'
+                    'params_file':'src/uia_husky_0776/husky_group/params/nav2_params.yaml'
                         
                 }.items()
             )
