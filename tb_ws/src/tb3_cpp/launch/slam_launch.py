@@ -24,7 +24,7 @@ import time
 def generate_launch_description():
 
         #  ros2 launch slam_toolbox online_async_launch.py 
-    slam=GroupAction(
+    slam = GroupAction(
         actions=[
             PushRosNamespace('tb'),
             IncludeLaunchDescription(
