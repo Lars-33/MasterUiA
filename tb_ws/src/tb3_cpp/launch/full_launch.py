@@ -85,7 +85,7 @@ def generate_launch_description():
                 ),    
                 launch_arguments={
                     #'map':'map/Masterlabben.yaml'
-                    'params_file':'src/tb3_cpp/params/nav2_param.yaml'
+                    #'params_file':'src/tb3_cpp/params/nav2_param.yaml'
                         
                 }.items()
             )
