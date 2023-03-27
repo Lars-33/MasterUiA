@@ -42,7 +42,7 @@ def generate_launch_description():
                 launch_arguments={
                     'tb3_param_dir':'./src/tb3_cpp/params/tb3_param.yaml'
                     #'__ns':'/tb'    
-                    }.items()
+                }.items()
             ),
         ]
     ),
@@ -84,20 +84,10 @@ def generate_launch_description():
                     #'params_file':'src/tb3_cpp/params/nav2_param.yaml'
                         
                 }.items()
-            )
+            ),
         ]
     )
 
-        # ros2 launch nav2_bringup rviz_launch.py 
-        #IncludeLaunchDescription(
-        #    
-        #    PythonLaunchDescriptionSource(
-        #        os.path.join(
-        #            get_package_share_directory('nav2_bringup'),
-        #            'launch/rviz_launch.py'
-        #        )
-        #    ),
-        #)
 
     ld = LaunchDescription()
     ld.add_action(tb_spawn)
