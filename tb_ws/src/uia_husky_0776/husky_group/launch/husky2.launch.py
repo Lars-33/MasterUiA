@@ -10,7 +10,7 @@ from launch.actions import GroupAction
 from launch_ros.actions import PushRosNamespace
 
 ARGUMENTS = [
-    DeclareLaunchArgument('serial_port', default_value="/dev/ttyUSB0",
+    DeclareLaunchArgument('serial_port', default_value="/dev/ttyUSB1",
                           description='Serial port to connect to the husky.'),
 ]
 #test Fra lars
