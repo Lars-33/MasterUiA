@@ -18,6 +18,8 @@ def generate_launch_description():
     filepath_config_joy = PathJoinSubstitution(
         [FindPackageShare('husky_control'), 'config', ('teleop_logitech.yaml')]
     )
+    teleop_logitech_params = LaunchConfiguration("teleop_logitech_params")
+
 
     node_joy = Node(
         namespace='joy_teleop',
@@ -25,7 +27,7 @@ def generate_launch_description():
         executable='joy_node',
         output='screen',
         name='joy_node',
-        parameters=[filepath_config_joy]
+        parameters=[teleop_logitech_params]
     )
 
     node_teleop_twist_joy = Node(
@@ -34,11 +36,11 @@ def generate_launch_description():
         executable='teleop_node',
         output='screen',
         name='teleop_twist_joy_node',
-        parameters=[filepath_config_joy]
+        parameters=[teleop_logitech_params]
     )
 
 
-    ld = LaunchDescription()
+    ld = LaunchDescription(ARGUMENTS)
     ld.add_action(node_joy)
     ld.add_action(node_teleop_twist_joy)
     return ld

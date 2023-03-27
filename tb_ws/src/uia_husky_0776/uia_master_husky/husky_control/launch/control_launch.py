@@ -7,6 +7,8 @@ from launch.substitutions import EnvironmentVariable
 import pathlib
 import launch.actions
 from launch.actions import DeclareLaunchArgument
+from launch_ros.actions import Node
+
 
 ARGUMENTS = [
 
@@ -16,12 +18,18 @@ ARGUMENTS = [
 ]
 
 def generate_launch_description():
-    return LaunchDescription([
-        launch_ros.actions.Node(
-            package='robot_localization',
-            executable='ekf_node',
-            name='ekf_node',
-            output='screen',
-            parameters=[os.path.join(get_package_share_directory("husky_control"), 'config', 'localization.yaml')],
-           ),
-    ])
+
+    localization_params = LaunchConfiguration("localization_params")
+
+ 
+    husky_control= Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_node',
+        output='screen',
+        parameters=[localization_params],
+    )
+
+    ld = LaunchDescription(ARGUMENTS)
+    ld.add_action=(husky_control)
+    return ld 
