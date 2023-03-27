@@ -26,6 +26,9 @@ ARGUMENTS = [
     DeclareLaunchArgument('teleop_interactive_markers_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","teleop_interactive_markers.yaml"],),
                           description='Path to teleop_interactive_markers .yaml file. In order to add for example um7(set publish tf to false)'),
 
+    DeclareLaunchArgument('twist_mux_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","twist_mux.yaml"],),
+                          description='Path to twist_mux .yaml file. In order to add for example um7(set publish tf to false)'),
+
     DeclareLaunchArgument('teleop_logitech_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","teleop_logitech.yaml"],),
                           description='Path to teleop_logitech .yaml file. In order to add for example um7(set publish tf to false)'),
 ]
@@ -43,6 +46,7 @@ def generate_launch_description():
     control_params = LaunchConfiguration("control_params")
     localization_params = LaunchConfiguration("localization_params")
     teleop_interactive_markers_params = LaunchConfiguration("teleop_interactive_markers_params")
+    twist_mux_params = LaunchConfiguration("twist_mux_params")
     teleop_logitech_params = LaunchConfiguration("teleop_logitech_params")
 
     
@@ -112,7 +116,8 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(PathJoinSubstitution(
         [FindPackageShare("husky_control"), 'launch', 'teleop_base_launch.py'])),
         launch_arguments ={
-            "params_file" : teleop_interactive_markers_params
+            "params_file" : teleop_interactive_markers_params,
+            "params_file" : twist_mux_params
         }.items()
     )
 
@@ -121,7 +126,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(PathJoinSubstitution(
         [FindPackageShare("husky_control"), 'launch', 'teleop_joy_launch.py'])),
         launch_arguments ={
-            "teleop_logitech_params" : teleop_interactive_markers_params
+            "teleop_logitech_params" : teleop_logitech_params
         }.items()
     )
 
