@@ -20,39 +20,31 @@ from launch.substitutions import TextSubstitution
 import time
 
 
-os.environ["TURTLEBOT3_MODEL"] = "waffle"
-
-os.system('sudo chmod a+rw /dev/ttyACM0')
-os.system('sudo chmod 666 /dev/ttyUSB0')
-
-
 
 def generate_launch_description():
 
-
-        # ros2 launch nav2_bringup localization_launch.py 
-    nav2=GroupAction(
+        #  ros2 launch slam_toolbox online_async_launch.py 
+    slam=GroupAction(
         actions=[
             PushRosNamespace('tb'),
-            IncludeLaunchDescription( 
+            IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
                     os.path.join(
-                        get_package_share_directory('nav2_bringup'),
-                        'launch/bringup_launch.py'
+                        get_package_share_directory('slam_toolbox'),
+                        'launch/online_async_launch.py'
                     )
-                ),    
+                ),
                 launch_arguments={
-                    #'map':'map/Masterlabben.yaml'
-                    'params_file':'src/tb3_cpp/params/nav2_param.yaml'
-                        
+                #'map':'/home/lars/MasterUiA/tb_ws/map/Masterlabben.yaml'
+                'params_file':'src/tb3_cpp/params/mapper_params_lifelong.yaml'
                 }.items()
-            )
+            ),
         ]
-    )
-
+    ),
 
     ld = LaunchDescription()
 
-    ld.add_action(nav2)
+    ld.add_action(slam)
+
     return ld
 
