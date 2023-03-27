@@ -45,7 +45,7 @@ def generate_launch_description():
                 }.items()
             ),
         ]
-    ),
+    )
 
 
         #  ros2 launch slam_toolbox online_async_launch.py 
@@ -65,7 +65,7 @@ def generate_launch_description():
                 }.items()
             ),
         ]
-    ),
+    )
 
 
         # ros2 launch nav2_bringup localization_launch.py 
