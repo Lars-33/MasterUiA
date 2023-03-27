@@ -40,7 +40,7 @@ def generate_launch_description():
                 }.items()
             ),
         ]
-    ),
+    )
 
     ld = LaunchDescription()
 
