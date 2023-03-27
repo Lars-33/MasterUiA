@@ -27,7 +27,7 @@ def generate_launch_description():
         # ros2 launch nav2_bringup localization_launch.py 
     nav2=GroupAction(
         actions=[
-            PushRosNamespace('tb'),
+            #PushRosNamespace('tb'),
             IncludeLaunchDescription( 
                 PythonLaunchDescriptionSource(
                     os.path.join(
