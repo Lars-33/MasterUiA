@@ -9,6 +9,10 @@ from launch_ros.substitutions import FindPackageShare
 from launch.actions import GroupAction
 from launch_ros.actions import PushRosNamespace
 
+ARGUMENTS = [
+    DeclareLaunchArgument('serial_port', default_value="/dev/ttyUSB1",
+                          description='Serial port to connect to the husky.'),
+]
 #test Fra lars
 def generate_launch_description():
 
@@ -66,7 +70,7 @@ def generate_launch_description():
         ]
     )
 
-    ld = LaunchDescription()
+    ld = LaunchDescription(ARGUMENTS)
 
     # Launch pointcloud to laserscan, imu and lidar
 
