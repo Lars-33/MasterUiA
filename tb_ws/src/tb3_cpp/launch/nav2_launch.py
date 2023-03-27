@@ -38,11 +38,11 @@ def generate_launch_description():
                 PythonLaunchDescriptionSource(
                     os.path.join(
                         get_package_share_directory('nav2_bringup'),
-                        'launch/navigation_launch.py'
+                        'launch/bringup_launch.py'
                     )
                 ),    
                 launch_arguments={
-                    'map':'map/Masterlabben.yaml',
+                    #'map':'map/Masterlabben.yaml',
                     'params_file':'src/tb3_cpp/params/nav2_param.yaml'
                         
                 }.items()
