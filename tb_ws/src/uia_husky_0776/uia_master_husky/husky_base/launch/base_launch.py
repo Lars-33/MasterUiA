@@ -16,11 +16,18 @@ ARGUMENTS = [
     DeclareLaunchArgument('urdf_extras', default_value='empty.urdf',
                           description='Path to URDF extras file. In order to add stuff to the husky'),
 
+    DeclareLaunchArgument('control_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","control.yaml"],),
+                          description='Path to control .yaml file. In order to add for example um7(set publish tf to false)'),
+
     DeclareLaunchArgument('localization_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","localization.yaml"],),
                           description='Path to Localization .yaml file. In order to add for example um7(set publish tf to true)'),
 
-    DeclareLaunchArgument('control_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","control.yaml"],),
-                          description='Path to control .yaml file. In order to add for example um7(set publish tf to false)'),
+
+    DeclareLaunchArgument('teleop_interactive_markers_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","teleop_interactive_markers.yaml"],),
+                          description='Path to teleop_interactive_markers .yaml file. In order to add for example um7(set publish tf to false)'),
+
+    DeclareLaunchArgument('teleop_logitech_params', default_value=PathJoinSubstitution([FindPackageShare("husky_control"),"config","teleop_logitech.yaml"],),
+                          description='Path to teleop_logitech .yaml file. In order to add for example um7(set publish tf to false)'),
 ]
 
 os.environ["HUSKY_TOP_PLATE_ENABLED"] = "false"
@@ -30,10 +37,15 @@ os.environ["HUSKY_IMU_RPY"] = "0 0 0"
 
 def generate_launch_description():
 
-    urdf_extras_path = LaunchConfiguration("urdf_extras")
-    config_husky_velocity_controller = LaunchConfiguration("control_params")
-    localization_params = LaunchConfiguration("localization_params")
     serial_port = LaunchConfiguration("serial_port")
+    urdf_extras_path = LaunchConfiguration("urdf_extras")
+
+    control_params = LaunchConfiguration("control_params")
+    localization_params = LaunchConfiguration("localization_params")
+    teleop_interactive_markers_params = LaunchConfiguration("teleop_interactive_markers_params")
+    teleop_logitech_params = LaunchConfiguration("teleop_logitech_params")
+
+    
 
     # Get URDF via xacro
     robot_description_content = Command(
@@ -65,7 +77,7 @@ def generate_launch_description():
     node_controller_manager = Node(
         package="controller_manager",
         executable="ros2_control_node",
-        parameters=[robot_description, config_husky_velocity_controller],
+        parameters=[robot_description, control_params],
         output={
             "stdout": "screen",
             "stderr": "screen",
@@ -99,12 +111,18 @@ def generate_launch_description():
     launch_husky_teleop_base = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(PathJoinSubstitution(
         [FindPackageShare("husky_control"), 'launch', 'teleop_base_launch.py'])),
+        launch_arguments ={
+            "params_file" : teleop_interactive_markers_params
+        }.items()
     )
 
     #Launch husky_teleop_joy
     launch_husky_teleop_joy = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(PathJoinSubstitution(
         [FindPackageShare("husky_control"), 'launch', 'teleop_joy_launch.py'])),
+        launch_arguments ={
+            "teleop_logitech_params" : teleop_interactive_markers_params
+        }.items()
     )
 
 

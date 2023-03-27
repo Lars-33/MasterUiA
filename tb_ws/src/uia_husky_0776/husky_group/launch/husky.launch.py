@@ -26,7 +26,7 @@ def generate_launch_description():
     localization_params = PathJoinSubstitution(
         [FindPackageShare('husky_group'),
         'params',
-        'localization.yaml'],
+        'localization_params.yaml'],
     )
 
     urdf_extras_path = PathJoinSubstitution(
@@ -36,7 +36,7 @@ def generate_launch_description():
     config_husky_velocity_controller = PathJoinSubstitution(
         [FindPackageShare("husky_group"),
         "params",
-        "control.yaml"],
+        "control_params.yaml"],
     )
     
     # Launch the husky robot using the husky_uia uia_master_husky repo
