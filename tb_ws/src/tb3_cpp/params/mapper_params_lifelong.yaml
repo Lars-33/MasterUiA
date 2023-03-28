@@ -1,4 +1,3 @@
-tb:
   slam_toolbox:
     ros__parameters:
 
@@ -14,7 +13,7 @@ tb:
       odom_frame: odom
       map_frame: map
       base_frame: base_footprint
-      scan_topic: tb/scan
+      scan_topic: /scan
       mode: mapping
 
       # lifelong params
