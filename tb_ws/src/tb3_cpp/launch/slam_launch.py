@@ -34,19 +34,11 @@ def generate_launch_description():
             ),
         ]
     )
-    map_publisher = Node(
-    package='slam_toolbox',
-    executable='occ_grid_node',
-    name='occ_grid_node',
-    namespace='tb',
-    remappings=[('map', 'slam_toolbox/map')],
-    parameters=[{'use_sim_time': False}]
-    )   
+
 
     ld = LaunchDescription()
 
     ld.add_action(slam)
-    ld.add_action(map_publisher)
 
     return ld
 
