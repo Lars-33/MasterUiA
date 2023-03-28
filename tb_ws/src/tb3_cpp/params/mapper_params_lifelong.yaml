@@ -14,7 +14,7 @@ tb:
       odom_frame: odom
       map_frame: map
       base_frame: base_footprint
-      scan_topic: /scan
+      scan_topic: tb/scan
       mode: mapping
 
       # lifelong params
