@@ -74,7 +74,7 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
-    ld.add_action(navigation)
+    #ld.add_action(navigation)
     ld.add_action(localization)
     return ld
 
