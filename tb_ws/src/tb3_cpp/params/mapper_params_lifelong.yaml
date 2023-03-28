@@ -11,10 +11,10 @@ tb:
       ceres_loss_function: None
 
       # ROS Parameters
-      odom_frame: /tb/odom
-      map_frame: /tb/map
+      odom_frame: odom
+      map_frame: map
       base_frame: base_footprint
-      scan_topic: /tb/scan
+      scan_topic: /scan
       mode: mapping
 
       # lifelong params
