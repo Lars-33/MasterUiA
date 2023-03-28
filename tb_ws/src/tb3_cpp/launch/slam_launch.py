@@ -9,6 +9,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.actions import GroupAction
 from launch_ros.actions import PushRosNamespace
 from launch_ros.actions import Node
+from launch_ros.actions import SetRemap
+
 
 
 
@@ -17,6 +19,8 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
         #  ros2 launch slam_toolbox online_async_launch.py 
+    SetRemap(src='/odom',dst='/tb/odom'),
+    SetRemap(src='/cmd_vel',dst='/tb/cmd_vel'),
     slam = GroupAction(
         actions=[
             PushRosNamespace('tb'),

@@ -26,12 +26,12 @@ def generate_launch_description():
 
     return LaunchDescription([
 
-        SetRemap(src='/odom',dst='/tb/odom'),
-        SetRemap(src='/cmd_vel',dst='/tb/cmd_vel'),
+        #SetRemap(src='/odom',dst='/tb/odom'),
+        #SetRemap(src='/cmd_vel',dst='/tb/cmd_vel'),
         #DeclareLaunchArgument("tb", default_value=TextSubstitution(text="tb")),
         GroupAction(
             actions=[
-                PushRosNamespace('/tb'),
+                PushRosNamespace('tb'),
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(
                         os.path.join(
