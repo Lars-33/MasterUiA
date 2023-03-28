@@ -15,8 +15,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import SetRemap
 from launch.actions import GroupAction
 from launch_ros.actions import PushRosNamespace
-from launch.substitutions import LaunchConfiguration
-from launch.substitutions import TextSubstitution
+
 
 os.environ["TURTLEBOT3_MODEL"] = "waffle"
 
