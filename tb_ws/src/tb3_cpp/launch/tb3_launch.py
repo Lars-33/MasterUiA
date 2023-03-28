@@ -31,7 +31,7 @@ def generate_launch_description():
         #DeclareLaunchArgument("tb", default_value=TextSubstitution(text="tb")),
         GroupAction(
             actions=[
-                PushRosNamespace('tb'),
+                PushRosNamespace('/tb'),
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(
                         os.path.join(
