@@ -33,7 +33,7 @@ def generate_launch_description():
                 PythonLaunchDescriptionSource(
                     os.path.join(
                         get_package_share_directory('nav2_bringup'),
-                        'launch/localization_launch.py '
+                        'launch/localization_launch.py'
                     )
                 ),    
                 launch_arguments={
