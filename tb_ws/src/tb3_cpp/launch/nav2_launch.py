@@ -25,7 +25,31 @@ def generate_launch_description():
 
 
         # ros2 launch nav2_bringup localization_launch.py 
-    nav2=GroupAction(
+    
+    localization=GroupAction(
+        actions=[
+            PushRosNamespace('tb'),
+            IncludeLaunchDescription( 
+                PythonLaunchDescriptionSource(
+                    os.path.join(
+                        get_package_share_directory('nav2_bringup'),
+                        'launch/localization_launch.py '
+                    )
+                ),    
+                launch_arguments={
+                    #'map':'map/Masterlabben.yaml',
+                    'params_file':'src/tb3_cpp/params/nav2_param.yaml',
+                    #'namespace':'tb',
+                    'use_namespace':'true',
+                    'use_sim_time':'false'
+                        
+                }.items()
+            )
+        ]
+    )
+ 
+
+    navigation=GroupAction(
         actions=[
             PushRosNamespace('tb'),
             IncludeLaunchDescription( 
@@ -50,6 +74,7 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
-    ld.add_action(nav2)
+    ld.add_action(navigation)
+    ld.add_action(localization)
     return ld
 
