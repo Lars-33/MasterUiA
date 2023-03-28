@@ -36,7 +36,8 @@ def generate_launch_description():
                 ),
                 launch_arguments={
                 #'map':'/home/lars/MasterUiA/tb_ws/map/Masterlabben.yaml'
-                'params_file':'src/tb3_cpp/params/mapper_params_lifelong.yaml'
+                'params_file':'src/tb3_cpp/params/mapper_params_lifelong.yaml',
+                'use_sim_time':'false'
                 }.items()
             ),
         ]
