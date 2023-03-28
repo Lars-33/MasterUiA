@@ -1,23 +1,16 @@
 import os
 
 from ament_index_python import get_package_share_directory
-
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch_ros.actions import Node
-
-#from launch.substitutions import PathJoinSubstitution, LaunchConfiguration, Command, FindExecutable 
-from launch_ros.substitutions import FindPackageShare
 
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
-from launch_ros.actions import SetRemap
 from launch.actions import GroupAction
 from launch_ros.actions import PushRosNamespace
-from launch.substitutions import LaunchConfiguration
-from launch.substitutions import TextSubstitution
-import time
+from launch_ros.actions import Node
+
+
 
 
 
@@ -41,10 +34,19 @@ def generate_launch_description():
             ),
         ]
     )
+    map_publisher = Node(
+    package='slam_toolbox',
+    executable='occ_grid_node',
+    name='occ_grid_node',
+    namespace='tb',
+    remappings=[('map', 'slam_toolbox/map')],
+    parameters=[{'use_sim_time': False}]
+    )   
 
     ld = LaunchDescription()
 
     ld.add_action(slam)
+    ld.add_action(map_publisher)
 
     return ld
 
