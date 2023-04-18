@@ -37,9 +37,9 @@ def generate_launch_description():
                     )
                 ),    
                 launch_arguments={
+                    'namespace':'tb',
                     'map':'map/Masterlabben.yaml',
                     'params_file':'src/tb3_cpp/params/nav2_param.yaml',
-                    'namespace':'tb',
                     'use_namespace':'true',
                     'use_sim_time':'false'
                         
