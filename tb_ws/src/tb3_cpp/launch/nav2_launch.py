@@ -19,8 +19,6 @@ from launch.substitutions import LaunchConfiguration
 from launch.substitutions import TextSubstitution
 import time
 
-
-
 def generate_launch_description():
 
 
@@ -45,7 +43,6 @@ def generate_launch_description():
             )
         ]
     )
- 
 
     navigation=GroupAction(
         actions=[
@@ -69,10 +66,8 @@ def generate_launch_description():
         ]
     )
 
-
     ld = LaunchDescription()
 
     #ld.add_action(navigation)
     ld.add_action(localization)
     return ld
-
