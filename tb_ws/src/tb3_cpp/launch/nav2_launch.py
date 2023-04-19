@@ -24,7 +24,7 @@ import time
 def generate_launch_description():
 
 
-        # ros2 launch nav2_bringup localization_launch.py 
+    # ros2 launch nav2_bringup localization_launch.py 
     
     localization=GroupAction(
         actions=[
@@ -40,9 +40,7 @@ def generate_launch_description():
                     'namespace':'tb',
                     'map':'map/Masterlabben.yaml',
                     'params_file':'src/tb3_cpp/params/nav2_param.yaml',
-                    'use_namespace':'true',
                     'use_sim_time':'false'
-                        
                 }.items()
             )
         ]
