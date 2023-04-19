@@ -39,6 +39,6 @@ def generate_launch_description():
 
     # Nodes
     ld.add_action(map_server)
-    ld.add_action(amcl)
+    #ld.add_action(amcl)
 
     return ld
