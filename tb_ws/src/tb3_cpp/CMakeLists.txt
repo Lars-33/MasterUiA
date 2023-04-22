@@ -51,8 +51,15 @@ install(PROGRAMS
   src/pose_pub_v0.py
   src/pose_pub_v1.py
   src/pose_pub_v2.py
+  src/pose_pub_v3.py
+  src/pose_pub_v4.py
   src/pose_sub_v0.py
   src/pose_sub_v1.py
+  src/cmd_vel_pub_v0.py
+  src/cmd_vel_sub_v0.py
+  src/cmd_vel_subpub_v0.py
+  src/odom_pub_v0.py
+  src/odom_sub_v0.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

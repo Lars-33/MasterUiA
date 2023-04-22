@@ -2,6 +2,7 @@
 import rclpy 
 from nav2_simple_commander.robot_navigator  import BasicNavigator
 
+# me learning getFeedback() and BasicNavigator()
 
 def main(): 
     rclpy.init()
@@ -16,6 +17,7 @@ def main():
     while not nav.isTaskComplete() or True: 
         print(nav, '\n')
         print(nav.getFeedback() , '\n----------------------------\n\n')
+        
 
     rclpy.shutdown()
 

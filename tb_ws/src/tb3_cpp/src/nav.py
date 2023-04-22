@@ -9,6 +9,8 @@ from rclpy.node import Node
 from std_msgs.msg import String 
 import time
 
+# me learning Nav2 API 
+
 def create_pose_stamped( nav , position_x , position_y , orientation_z): 
     q_x , q_y , q_z , q_w = tf_transformations.quaternion_from_euler( 0.0 , 0.0 , orientation_z )
     pose = PoseStamped()
