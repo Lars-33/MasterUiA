@@ -14,9 +14,9 @@ class subpub(Node):
         self.publisher_ = self.create_publisher(Twist, 'tb/cmd_vel', 10)
         self.timer = self.create_timer(0.5, self.timer_callback)
         self.i = 0
-        self.delay = 5
+        self.delay = 9
         self.submsg = Twist()  # Initialize the submsg attribute to Twist() 
-        self.array_linear_x = [0.26, 0.26, 0.26, 0.26, 0.26]  #set initial vel start here 
+        self.array_linear_x = [0.25] * self.delay #set initial vel start here 
         self.array_angular_z = [0.0] * self.delay
 
     def listener_callback(self,submsg):
@@ -24,6 +24,7 @@ class subpub(Node):
 
     def timer_callback(self):
         pubmsg = Twist()
+
         pubmsg.linear.x = self.array_linear_x[self.i] 
         pubmsg.angular.z = self.array_angular_z[self.i]
         

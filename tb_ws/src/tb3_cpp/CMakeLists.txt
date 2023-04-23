@@ -58,6 +58,7 @@ install(PROGRAMS
   src/cmd_vel_pub_v0.py
   src/cmd_vel_sub_v0.py
   src/cmd_vel_subpub_v0.py
+  src/cmd_vel_subpub_v1.py
   src/odom_pub_v0.py
   src/odom_sub_v0.py
   DESTINATION lib/${PROJECT_NAME}
