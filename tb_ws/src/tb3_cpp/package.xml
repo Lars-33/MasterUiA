@@ -4,7 +4,7 @@
   <name>tb3_cpp</name>
   <version>0.0.0</version>
   <description>Use nav2 api to make a turtlbot3 follow a clearpath husky</description>
-  <maintainer email="larsmuggerud@proton.me">lars</maintainer>
+  <maintainer email="larsmuggerud99@gmail.com">lars</maintainer>
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
