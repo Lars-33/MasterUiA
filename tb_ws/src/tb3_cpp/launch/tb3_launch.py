@@ -11,9 +11,9 @@ from launch_ros.actions import SetRemap
 from launch.actions import GroupAction
 from launch_ros.actions import PushRosNamespace
 
-os.environ["TURTLEBOT3_MODEL"] = "waffle"
+os.environ["TURTLEBOT3_MODEL"] = "waffle"   # exporting "TURTLEBOT3_MODEL" is required by "robot.launch.py"
 os.system('sudo chmod a+rw /dev/ttyACM0')
-os.system('sudo chmod 666 /dev/ttyUSB0')
+os.system('sudo chmod 666 /dev/ttyUSB0')    # opens acsess to LiDAR and OpenCR1.0 
 
 def generate_launch_description():
 
@@ -23,12 +23,12 @@ def generate_launch_description():
         #DeclareLaunchArgument("tb", default_value=TextSubstitution(text="tb")),
         GroupAction(
             actions=[
-                PushRosNamespace('tb'),
+                PushRosNamespace('tb'),     # Pushing namespace to TB3 
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(
                         os.path.join(
                             get_package_share_directory('turtlebot3_bringup'),
-                            'launch/robot.launch.py'
+                            'launch/robot.launch.py'    # Finding and executing standard TB3 launch
                         )
                     ),
                             
