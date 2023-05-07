@@ -33,7 +33,7 @@ def generate_launch_description():
                     ),
                             
                     launch_arguments={
-                        'tb3_param_dir':'./src/tb3_cpp/params/tb3_param.yaml'
+                        'tb3_param_dir':'./src/tb3_cpp/params/tb3_param.yaml'   # Coustom params just for ns
                         #'__ns':'/tb'    
                         }.items()
                 ),
